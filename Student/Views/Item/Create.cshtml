@@ -1,0 +1,78 @@
+﻿@model Student.Models.DBEntities.Items
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Items</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StuId" class="control-label"></label>
+                <input asp-for="StuId" class="form-control" />
+                <span asp-validation-for="StuId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Locker">Locker</label>
+                <input id="Locker" name="Locker" value="Accepted" type="checkbox">
+                <span asp-validation-for="Locker" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Bed">Bed</label>
+                <input id="Bed" name="Bed" value="Accepted" type="checkbox">
+                <span asp-validation-for="Bed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Table">Table</label>
+                <input id="Table" name="Table" value="Accepted" type="checkbox">
+                <span asp-validation-for="Table" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Chair">Chair</label>
+                <input id="Chair" name="Chair" value="Accepted" type="checkbox">
+                <span asp-validation-for="Chair" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Mirror">Mirror</label>
+                <input id="Mirror" name="Mirror" value="Accepted" type="checkbox">
+                <span asp-validation-for="Mirror" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Foam">Foam</label>
+                <input id="Foam" name="Foam" value="Accepted" type="checkbox">
+                <span asp-validation-for="Foam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Mop">Mop</label>
+                <input id="Mop" name="Mop" value="Accepted" type="checkbox">
+                <span asp-validation-for="Mop" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Edit">Edit</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

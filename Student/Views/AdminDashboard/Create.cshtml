@@ -1,0 +1,118 @@
+﻿@model Student.Models.DBEntities.Students
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Students</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StuId" class="control-label"></label>
+                <input asp-for="StuId" class="form-control" />
+                <span asp-validation-for="StuId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Department" class="control-label"></label>
+                <select asp-for="Department" class="form-control">
+                    <option value="select">choose...</option>
+                    <option value="BIOMEDICAL">BIOMEDICAL</option>
+                    <option value="CHEMICAL">CHEMICAL</option>
+                    <option value="CIVIL">CIVIL</option>
+                    <option value="ELECTRICAL">ELECTRICAL</option>
+                    <option value="MECHANICAL">MECHANICAL</option>
+                    <option value="SOFTWARE">SOFTWARE</option>
+                </select>
+                <span asp-validation-for="Department" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Region" class="control-label"></label>
+                <select asp-for="Region" class="form-control">
+                    <option value="select">choose...</option>
+                    <option value="OROMIA">OROMIA</option>
+                    <option value="SIDAMA">SIDAMA</option>
+                    <option value="AMHARA">AMHARA</option>
+                    <option value="SNNPR">SNNPR</option>
+                    <option value="TIGRAY">TIGRAY</option>
+                    <option value="BENESHANGUL-GUMUZ">BENESHANGUL-GUMUZ</option>
+                    <option value="GAMBELLA">GAMBELLA</option>
+                    <option value="SOUTH-ETHIOPIA">SOUTH-ETHIOPIA</option>
+                    <option value="AFAR">AFAR</option>
+                    <option value="SOMALIA">SOMALIA</option>
+                </select>
+                <span asp-validation-for="Region" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <select asp-for="Gender" class="form-control">
+                    <option value="select">choose...</option>
+                    <option value="Female">F</option>
+                    <option value="Male">M</option>
+                </select>
+                <span asp-validation-for="Department" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RoomNo" class="control-label"></label>
+                <select asp-for="RoomNo" class="form-control">
+                    <option value="select">choose...</option>
+                    <option value="BlockA/101">BlockA/101</option>
+                    <option value="BlockA/102">BlockA/102</option>
+                    <option value="BlockA/201">BlockA/201</option>
+                    <option value="BlockA/202">BlockA/202</option>
+
+                    <option value="BlockB/101">BlockB/101</option>
+                    <option value="BlockB/102">BlockB/102</option>
+                    <option value="BlockB/201">BlockB/201</option>
+                    <option value="BlockB/202">BlockB/202</option>
+                </select>
+                <span asp-validation-for="RoomNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <select asp-for="Year" class="form-control">
+                    <option value="select">choose...</option>
+                    <option value="1st">1st</option>
+                    <option value="2nd">2nd</option>
+                    <option value="3rd">3rd</option>
+                    <option value="4th">4th</option>
+                    <option value="5th">5th</option>
+                   
+                </select>
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

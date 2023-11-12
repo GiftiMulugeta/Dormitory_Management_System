@@ -1,0 +1,31 @@
+﻿@model List<Student.Models.StudentsViewModel>
+@{
+	ViewData["Title"] = "Student Info";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<hr />
+<form id="stuinfo">
+	
+		
+			@if(Model != null && Model.Any())
+			{
+				
+				@foreach (var student in Model)
+				{
+					<ul id="list">
+				<li id="info"><strong>Full Name</strong>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <i>@student.FullName</i> </li>
+				<li id="info"><strong>Id</strong>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp @student.StuId</li>
+				<li id="info"><strong>Department</strong>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp @student.Department</li>
+				<li id="info"><strong>Year</strong>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp @student.Year</li>
+				<li id="info"><strong>Region</strong>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp @student.Region</li>
+				<li id="info"><strong>RoomNo</strong>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp @student.RoomNo</li>
+			</ul>	
+				}
+			}
+			
+	
+		
+	
+</form>

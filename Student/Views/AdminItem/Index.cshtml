@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Student.Models.DBEntities.Items>
+
+@{
+    ViewData["Title"] = "RegisteredItems";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table" id="adinfo">
+    <thead id="inf">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StuId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Locker)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Table)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Chair)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mirror)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Foam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mop)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            <tr id="info">
+            <td>
+                @Html.DisplayFor(modelItem => item.StuId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Locker)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Table)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chair)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mirror)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Foam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mop)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" id="info">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" id="info">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" id="info">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
